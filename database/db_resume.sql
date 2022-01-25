@@ -31,8 +31,11 @@ CREATE TABLE `resume` (
   `skill` varchar(255) DEFAULT NULL,
   `surname` varchar(255) DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `experience` varchar(255) DEFAULT NULL,
+  `workplace` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +44,7 @@ CREATE TABLE `resume` (
 
 LOCK TABLES `resume` WRITE;
 /*!40000 ALTER TABLE `resume` DISABLE KEYS */;
-INSERT INTO `resume` VALUES (3,'new york university','doe@hotmail.com','John','911','java web development','Doe',2);
+INSERT INTO `resume` VALUES (13,'new york university','doe@hotmail.com','John','555','java web development','Doe',2,'backend development','5 years','silicon valley');
 /*!40000 ALTER TABLE `resume` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-25 13:00:35
+-- Dump completed on 2022-01-25 21:01:30
