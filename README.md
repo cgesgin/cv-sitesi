@@ -7,6 +7,6 @@ INSERT INTO roles (name) VALUES ('ROLE_USER');
 INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
 
 ```
-cv-Frontend çalıştırmadan önce  ``` npm install  ``` komutunu çalıştırın.
+* cv-Frontend çalıştırmadan önce  ``` npm install  ``` komutunu çalıştırın.
 
-Kulllanıcı oluşturduktan sonra kullanıcıya veri tabanından sadece admin rolünü ekleyin.
+* Kulllanıcı oluşturduktan sonra kullanıcıya veri tabanından sadece admin rolünü ekleyin.
