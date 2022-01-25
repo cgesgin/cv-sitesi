@@ -19,7 +19,9 @@ class CreateCVComponent extends Component {
             education: '',
             skill: '',
             user_id: '',
-            
+            experience: '',
+            workplace: '',
+            des:''
         };
 
         this.changeNameHandler = this.changeNameHandler.bind(this);
@@ -28,10 +30,13 @@ class CreateCVComponent extends Component {
         this.changePhoneHandler = this.changePhoneHandler.bind(this);
         this.changeSkillHandler = this.changeSkillHandler.bind(this);
         this.changeEducationHandler = this.changeEducationHandler.bind(this);
-
+        this.changeExperienceHandler=this.changeExperienceHandler.bind(this);
+        this.changeWorkplaceHandler=this.changeWorkplaceHandler.bind(this);
+       
+        this.changeDesHandler=this.changeDesHandler.bind(this);
         this.save = this.save.bind(this);
     }
-   
+
 
     save(e) {
         e.preventDefault();
@@ -43,7 +48,11 @@ class CreateCVComponent extends Component {
             phone: this.state.phone,
             education: this.state.education,
             skill: this.state.skill,
-            user_id: user.id
+            user_id: user.id,
+            experience: this.state.experience,
+            workplace: this.state.workplace,
+            description:this.state.des
+           
         };
         userService.create(cv).then(
             response => {
@@ -84,6 +93,19 @@ class CreateCVComponent extends Component {
     changeSkillHandler = (event) => {
         this.setState({ skill: event.target.value });
     }
+    changeExperienceHandler = (event) => {
+        this.setState({ experience: event.target.value });
+    }
+    
+    changeWorkplaceHandler = (event) => {
+        this.setState({ workplace: event.target.value });
+    }
+
+    changeDesHandler = (event) => {
+        this.setState({ des: event.target.value });
+    }
+  
+    
 
     render() {
         return (
@@ -129,6 +151,32 @@ class CreateCVComponent extends Component {
                                 <input name="skill" value={this.state.skill}
                                     onChange={this.changeSkillHandler}
                                     type="text" class="form-control" />
+                            </div>
+
+                            <div className="card col-md-7 offset-md-3 border-3" >
+                            <div className="card-body">
+                            <h3 className="text-center"> Experience </h3>
+                                <div className="card col-md-12 offset-md-3">
+                                    <label class="fw-bold fs-5">work experience</label>
+                                    <input name="experience" value={this.state.experience}
+                                        onChange={this.changeExperienceHandler}
+                                        type="text" class="form-control" />
+                                </div>
+
+                                <div className="card col-md-12 offset-md-3">
+                                    <label class="fw-bold fs-5">Workplace</label>
+                                    <input name="workplace" value={this.state.workplace}
+                                        onChange={this.changeWorkplaceHandler}
+                                        type="text" class="form-control" />
+                                </div>
+
+                                <div className="card col-md-12 offset-md-3">
+                                    <label class="fw-bold fs-5">Description</label>
+                                    <input name="description" value={this.state.des}
+                                        onChange={this.changeDesHandler}
+                                        type="text" class="form-control" />
+                                </div>
+                            </div>
                             </div>
                             <div class="form-group row">
                                 <button name="submit" type="submit" onClick={this.save} class="btn btn-primary">create </button>

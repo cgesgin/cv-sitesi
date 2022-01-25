@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +34,20 @@ public class Resume{
 	
 	@Column(name="user_id")
 	private Long user_id;
+	
+
+	@Column(name="experience")
+	private String experience;
+	
+	@Column(name="workplace")
+	private String workplace;
+	
+
+	@Column(name="description")
+	private String description;
+	
+	
+	
 	
 	public Resume() {
 
@@ -117,9 +129,29 @@ public class Resume{
 		return id;
 	}
 
-	
-	
-	 
+	public String getExperience() {
+		return experience;
+	}
+
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	public String getWorkplace() {
+		return workplace;
+	}
+
+	public void setWorkplace(String workplace) {
+		this.workplace = workplace;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 
 }

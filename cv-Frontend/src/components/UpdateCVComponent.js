@@ -16,7 +16,10 @@ class UpdateCVComponent extends Component {
             education: '',
             skill: '',
             user_id: '',
-            cv_id: ''
+            cv_id: '',
+            experience: '',
+            workplace: '',
+            description:''
         };
         // this.changeNameHandler = this.changeNameHandler.bind(this);
         this.update = this.update.bind(this);
@@ -34,7 +37,10 @@ class UpdateCVComponent extends Component {
                     education: temp.education,
                     skill: temp.skill,
                     user_id: temp.user_id,
-                    cv_id: temp.id
+                    cv_id: temp.id,
+                    experience: temp.experience,
+                    workplace: temp.workplace,
+                    description: temp.description
                 });
             }
         );
@@ -60,7 +66,16 @@ class UpdateCVComponent extends Component {
     changeSkillHandler = (event) => {
         this.setState({ skill: event.target.value });
     }
-
+    changeExperienceHandler = (event) => {
+        this.setState({ experience: event.target.value });
+    }
+    
+    changeWorkplaceHandler = (event) => {
+        this.setState({ workplace: event.target.value });
+    }
+    changeDescriptionHandler = (event) => {
+        this.setState({ description: event.target.value });
+    }
     update(e) {
         e.preventDefault();
         let cv = {
@@ -70,7 +85,10 @@ class UpdateCVComponent extends Component {
             phone: this.state.phone,
             education: this.state.education,
             skill: this.state.skill,
-            user_id: this.state.user_id
+            user_id: this.state.user_id,
+            experience: this.state.experience,
+            workplace: this.state.workplace,
+            description: this.state.description
         };
 
 
@@ -97,7 +115,7 @@ class UpdateCVComponent extends Component {
         console.log('cv=>' + JSON.stringify(cv));
     }
     cancel() {
-        this.props.history.push('/myResume/'+this.state.id);
+        this.props.history.push('/myResume/' + this.state.id);
     }
     render() {
         return (
@@ -140,6 +158,23 @@ class UpdateCVComponent extends Component {
                             <input placeholder="Skill" name="skill" className="form-control"
                                 value={this.state.skill} onChange={this.changeSkillHandler} />
                         </div>
+
+                        <div className="card col-md-6 offset-md-3">
+                            <label class="fw-bold fs-5">work experience</label>
+                            <input placeholder="experience" name="experience" className="form-control"
+                                value={this.state.experience} onChange={this.changeExperienceHandler} />
+                        </div>
+                        <div className="card col-md-6 offset-md-3">
+                            <label class="fw-bold fs-5">workplace</label>
+                            <input placeholder="workplace" name="workplace" className="form-control"
+                                value={this.state.workplace} onChange={this.changeWorkplaceHandler} />
+                        </div>
+                        <div className="card col-md-6 offset-md-3">
+                            <label class="fw-bold fs-5">description</label>
+                            <input placeholder="description" name="description" className="form-control"
+                                value={this.state.description} onChange={this.changeDescriptionHandler} />
+                        </div>
+                       
                     </div>
                     <button className="btn btn-success" onClick={this.update}>Save</button>
                     <button onClick={() => this.cancel()} class="btn btn-info">cancel</button>

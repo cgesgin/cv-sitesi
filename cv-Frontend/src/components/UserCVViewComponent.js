@@ -84,6 +84,19 @@ class UserCVViewComponent extends Component {
                             <label class="fw-bold fs-5"> Skill: </label>
                             <input name="email" className="form-control" value={this.state.cv.skill} readOnly />
                         </div>
+                        <div className="card col-md-8 offset-md-3">
+                            <label class="fw-bold fs-5">work experience: </label>
+                            <input name="email" className="form-control" value={this.state.cv.experience} readOnly />
+                        </div>
+                        <div className="card col-md-8 offset-md-3">
+                            <label class="fw-bold fs-5"> workplace: </label>
+                            <input name="email" className="form-control" value={this.state.cv.workplace} readOnly />
+                        </div>
+                        <div className="card col-md-8 offset-md-3">
+                            <label class="fw-bold fs-5">work description: </label>
+                            <input name="email" className="form-control" value={this.state.cv.description} readOnly />
+                        </div>                        
+
                         <div class="btn-group" role="group" aria-label="Basic example">
                         <button onClick={() => this.gotoUpdate(this.state.id)}  class="btn btn-success">update</button>
                         <button onClick={() => this.deleteResume(this.state.cv.id)}  class="btn btn-danger">delete</button>

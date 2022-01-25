@@ -76,6 +76,9 @@ public class TestController {
 		resume.setEducation(updateCV.getEducation());
 		resume.setSkill(updateCV.getSkill());
 		resume.setUser_id(updateCV.getUser_id());
+		resume.setExperience(updateCV.getExperience());
+		resume.setWorkplace(updateCV.getWorkplace());
+		resume.setDescription(updateCV.getDescription());
 		
 		Resume update= ResumeRepository.save(resume);
 		return ResponseEntity.ok(update);
